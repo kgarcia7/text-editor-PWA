@@ -20,7 +20,8 @@ module.exports = () => {
     plugins: [
       // Webpack plugin that generates our html file and injects our bundles. 
       new HtmlWebpackPlugin({ 
-        template: './src/index.html',
+        template: './index.html',
+        title: 'J.A.T.E'
       }),
 
       // Injects our custom service worker
@@ -44,7 +45,8 @@ module.exports = () => {
             options: {
               presets: [
                 ['@babel/preset-env', { targets: "defaults" }]
-              ]
+              ],
+              plugins: ['@babel/transform-runtime'],
             }
           }
         }
